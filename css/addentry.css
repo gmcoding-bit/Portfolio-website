@@ -1,0 +1,158 @@
+header{
+    background-color: #0F172A;
+    height: 1em;
+    color:#F8FAFC;
+    font-size:150%;
+    grid-area:header;
+    padding:1em 1em;
+    height:1em;
+
+}
+
+.nav_bar , .contact_bar{
+    list-style: none;
+    display: flex;
+    padding-left: 0em;
+    column-gap: 7em;
+    flex-wrap: wrap;
+    margin: 0em 0em;
+    align-items: center;
+}
+.pagelink{
+    font-size: 150%;
+    border-bottom: 0.1em;
+}
+
+.pagelink{
+    color: #F8FAFC;
+    text-decoration: none;
+}
+.pagelink:hover{
+    color: #F8FAFC;
+    text-decoration:underline solid #38BDF8;
+}
+
+.nav_container , .contact_container{
+    grid-area:nav_container;
+    display: flex;
+    flex-wrap: wrap;
+    height:auto;
+    color: white;
+    min-height:5em;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0em;
+    background-color: #1E293B;
+}
+
+article{
+    background-color: #949494;
+    grid-area:article;
+    padding:2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.inner_section{
+    background-color: #E2E8F0;
+    border-radius: 8px;
+    padding: 1rem 1rem;
+}
+.inner_section h1{
+    text-decoration:solid underline;
+    font-size: 150%;
+    padding-bottom: 0.5rem;
+}
+
+footer{
+    background-color: #0F172A;
+    grid-area: footer;
+    color:#F8FAFC;
+    font-size: 150%;
+}
+.contact_img{
+    height: 20vh;
+    width:10vw;
+}
+body{
+    min-height: 100vh;
+}
+.container{
+    font-family: "DM Sans",sans-serif;
+    display:grid;
+    min-height: 96vh;
+    grid-template-areas:
+    'header'
+    'nav_container'
+    'article'
+    'footer';
+    gap: 0.7rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.1fr 3fr 1fr;
+    padding: 1em 1em;
+    background-color: rgb(2, 95, 123);
+}
+.form_container{
+    display:flex;
+    flex-direction: column;
+    align-items:inherit;
+    padding:1rem 1rem;
+    text-align:center;
+    min-width: 20rem;
+}
+
+.login_title{
+    font-size:150%;
+    padding-bottom: 1rem;
+}
+
+.input_box{
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    min-width: 20em;
+    font-size: 1em;
+}
+
+.input_container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: left;
+    justify-content: center;
+}
+
+
+#text_box{
+    padding: 1rem 1rem;
+    min-width: 20rem;
+    min-height:20rem;
+    font-size: 1em;
+    text-align:left;
+}
+
+.button_container{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+button{
+    min-width: 7rem;
+    min-height: 3rem;
+    font-size: 125%;
+}
+
+form{
+    min-width: 30rem;
+}
+
+
+
+fieldset{
+    border:none;
+}
