@@ -26,7 +26,7 @@
                     <li class="nav_item"><a class="pagelink" href="Experience.html">Experience</a></li>
                     <li class="nav_item"><a class="pagelink" href="portfolio.html">Portfolio</a></li>
                     <li class="nav_item"><a class="pagelink" href="viewBlog.php">Blog</a></li>
-                    <li class="nav_item"><a class="pagelink" href="addentry.html">Add entry</a></li>
+                    <li class="nav_item"><a class="pagelink" href="addentry.php">Add entry</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,7 +45,7 @@
                 echo "<a href='logout.php'>Logout</a>";
             }else{
                 print("<div class='form_container'>
-                            <form action=" . $_SERVER['PHP_SELF'] . " method='post'>
+                            <form action='loginProcess.php' method='post'>
                                 <fieldset>
                                     <h1 class='login_title'>Login</h1>
                                     <div class='input_container'>
@@ -71,38 +71,5 @@
             </div>
         </footer>
     </div>
-
-    <?php
-        if($_SERVER["REQUEST_METHOD"] == "POST") {
-            $servername = "127.0.0.1";
-            $username = "root";
-            $password = "";
-            $dbname = "portfolio_website";
-            
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            $email = $_POST['femail'];
-            $password = $_POST['fpassword'];
-
-            $sql = "SELECT * FROM USERS WHERE email='$email' AND password='$password'";
-            $result = $conn->query($sql);
-
-            if($result === false) {
-                die("Error: " . $conn->error);
-            }
-            if ($result-> num_rows === 1) {
-                $row = $result->fetch_assoc();
-                $_SESSION['logged_in'] = true;
-                $_SESSION['user_id'] = $row['id'];
-                $_SESSION['email'] = $email;
-                header("Location: index.php");
-                exit();
-            }
-        }
-    ?>
 </body>
 </html>
