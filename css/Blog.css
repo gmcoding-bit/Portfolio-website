@@ -116,3 +116,16 @@ footer{
     height: 20vh;
     width:10vw;
 }
+
+.blog_entry {
+    background-color: #ffffff;       
+    padding: 1.2rem 1.5rem;
+    border: 1px solid #94A3B8;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); 
+}
+#month_selector{
+    margin-bottom:1rem;
+}
+

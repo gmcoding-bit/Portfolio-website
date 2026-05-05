@@ -12,20 +12,24 @@
         if($conn->connect_error){
             die("Connection failed: " . $conn->connect_error);
         }
+        if(isset($_POST['preview'])){
+            $_SESSION['preview_title'] = $_POST['title'];
+            $_SESSION['preview_text'] = $_POST['text'];
+            header("Location: preview.php");
+        }else{
+            $title = $_POST['title'];
+            $text = $_POST['text'];
+            $timezone = date_default_timezone_set("UTC");
+            $date = date("jS F Y, G:i e");
 
-        $title = $_POST['title'];
-        $text = $_POST['text'];
+            $sql = "INSERT INTO blogs (`title`,`content`,`datemade`) VALUES('$title','$text','$date')";
 
-        $timezone = date_default_timezone_set("GMT");
-        $date = date("jS F Y, G:i e");
+            $conn -> query($sql);
+            $conn -> close();
 
-        $sql = "INSERT INTO blogs (`title`,`content`,`datemade`) VALUES('$title','$text','$date')";
-
-        $conn -> query($sql);
-        $conn -> close();
-
-        header("Location: addentry.php"); 
-        exit();
+            header("Location: addentry.php"); 
+            exit();
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -70,7 +74,8 @@
                             </div>
                                 <div class="button_container">
                                 <button id="post" type="submit">Post</button>
-                                <button id="clear" type="submit">Clear</button>
+                                <button id="preview" type="button">Preview</button>
+                                <button id="clear" type="button">Clear</button>
                             </div>
                         </fieldset>
                     </form>
