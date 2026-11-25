@@ -68,4 +68,3 @@ This is a learning project and a few rough edges are intentionally left as-is fo
 ## Author
 
 **Rahul Rai**
-[GitHub](https://github.com/gmcoding-bit) · [Email](mailto:rahulraix100@gmail.com)
